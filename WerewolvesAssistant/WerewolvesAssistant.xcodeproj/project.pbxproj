@@ -178,6 +178,8 @@
 		BF6CFDF71ED916FD00A7C72F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				BFF13EA61EDEA03500A06A41 /* NetworkManager */,
+				BFF13EA71EDEA03500A06A41 /* Protocol */,
 				BF6CFDF81ED916FD00A7C72F /* Common */,
 				BF6CFDFD1ED916FD00A7C72F /* Extensions */,
 				BF6CFE081ED916FD00A7C72F /* Vendor */,
@@ -217,6 +219,20 @@
 			children = (
 			);
 			path = Vendor;
+			sourceTree = "<group>";
+		};
+		BFF13EA61EDEA03500A06A41 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		BFF13EA71EDEA03500A06A41 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,6 +491,7 @@
 				BF6CFCA21ED9103300A7C72F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

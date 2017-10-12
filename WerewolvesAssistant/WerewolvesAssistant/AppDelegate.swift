@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let overlayClass = NSClassFromString("UIDebuggingInformationOverlay") as? UIWindow.Type
         _ = overlayClass?.perform(NSSelectorFromString("prepareDebuggingOverlay"))
         
-        configAppearance()
+//        configAppearance()
         return true
     }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vw7-xa-bfp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vw7-xa-bfp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--呆萌助手-->
+        <!--开始你的表演-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="STIHomeViewController" customModule="WerewolvesAssistant" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="呆萌助手" id="T7J-ae-RLK">
+                    <navigationItem key="navigationItem" title="开始你的表演" id="T7J-ae-RLK">
                         <barButtonItem key="rightBarButtonItem" title="配置" id="tjO-mo-x2v">
                             <connections>
                                 <segue destination="sHD-C9-1WM" kind="show" id="1Y8-Sb-ZMT"/>
@@ -193,7 +193,7 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="47F-4Z-bgb">
                                 <rect key="frame" x="71" y="338" width="51" height="31"/>
                                 <connections>
-                                    <action selector="qupidSwitchValueChanged:" destination="sHD-C9-1WM" eventType="valueChanged" id="hyx-qc-k0b"/>
+                                    <action selector="cupidSwitchValueChanged:" destination="sHD-C9-1WM" eventType="valueChanged" id="vx6-6V-7yx"/>
                                 </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IlF-CY-l7B">
@@ -261,13 +261,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="玩家配置" id="8Ia-2j-7VC"/>
                     <connections>
+                        <outlet property="cupidSwitch" destination="47F-4Z-bgb" id="SGZ-NM-Ds3"/>
                         <outlet property="elderSwitch" destination="IlF-CY-l7B" id="h3c-Ra-F8O"/>
                         <outlet property="hunterSwitch" destination="l5C-vB-fdE" id="yAk-kt-uVE"/>
                         <outlet property="idiotSwitch" destination="hlj-AM-M8V" id="lk6-Br-RmD"/>
                         <outlet property="littleGirlSwitch" destination="cj4-Gi-8el" id="Wux-7O-bhn"/>
                         <outlet property="playerSlider" destination="cpY-pO-8gZ" id="7LI-pv-BpK"/>
                         <outlet property="playerTextField" destination="eIL-yo-z3D" id="Hwf-oq-eL2"/>
-                        <outlet property="qupidSwitch" destination="47F-4Z-bgb" id="5HV-o5-AZQ"/>
                         <outlet property="seerSwitch" destination="KZy-0b-589" id="qzD-cd-X3S"/>
                         <outlet property="thiefSwitch" destination="M2B-kj-qbn" id="sKT-PN-Dae"/>
                         <outlet property="townsfolkStepper" destination="0zl-HT-FxR" id="8K1-zE-0xh"/>
@@ -280,6 +280,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFS-6a-le9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1320.8" y="106.59670164917542"/>
+        </scene>
+        <!--身份确认-->
+        <scene sceneID="8ng-35-0CC">
+            <objects>
+                <viewController id="0uD-M9-UaI" customClass="STIRoleShowViewController" customModule="WerewolvesAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3BY-Jc-f4P"/>
+                        <viewControllerLayoutGuide type="bottom" id="QCw-Da-sxd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yzj-ZP-iqB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rQ-Q9-GbB">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QCw-Da-sxd" firstAttribute="top" secondItem="5rQ-Q9-GbB" secondAttribute="bottom" id="8fQ-zL-eu2"/>
+                            <constraint firstItem="5rQ-Q9-GbB" firstAttribute="top" secondItem="3BY-Jc-f4P" secondAttribute="bottom" id="Scg-FL-I2c"/>
+                            <constraint firstAttribute="trailing" secondItem="5rQ-Q9-GbB" secondAttribute="trailing" id="ea0-md-rhZ"/>
+                            <constraint firstItem="5rQ-Q9-GbB" firstAttribute="leading" secondItem="yzj-ZP-iqB" secondAttribute="leading" id="rXT-qT-J06"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="身份确认" id="a35-Jm-8xA"/>
+                    <connections>
+                        <outlet property="scrollView" destination="5rQ-Q9-GbB" id="liU-aq-8Qq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eaQ-Jp-4Si" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2129" y="107"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eRr-ef-UEN">

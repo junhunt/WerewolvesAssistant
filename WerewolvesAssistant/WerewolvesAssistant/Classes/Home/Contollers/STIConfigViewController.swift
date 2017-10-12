@@ -24,7 +24,7 @@ class STIConfigViewController: UIViewController {
     @IBOutlet weak var hunterSwitch: UISwitch!
     @IBOutlet weak var idiotSwitch: UISwitch!
     
-    @IBOutlet weak var qupidSwitch: UISwitch!
+    @IBOutlet weak var cupidSwitch: UISwitch!
     @IBOutlet weak var littleGirlSwitch: UISwitch!
     @IBOutlet weak var elderSwitch: UISwitch!
     @IBOutlet weak var thiefSwitch: UISwitch!
@@ -33,11 +33,76 @@ class STIConfigViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        navigationItem.rightBarButtonItem =
+            UIBarButtonItem.init(barButtonSystemItem: .done, target: self, action: #selector(nextStep))
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func roleShow(_ sender: UIBarButtonItem) {
+        nextStep()
+    }
+    
+    func nextStep() {
+        var roles = Array<STIRoleProtocol>()
+        
+        let townsfolkCount = Int(townsfolkTextField.text!) ?? 0
+        for _ in 0..<townsfolkCount {
+            let townsfolk = STITownsfolk()
+            roles.append(townsfolk)
+        }
+        
+        let werewolfCount = Int(werewolfTextField.text!) ?? 0
+        for _ in 0..<werewolfCount {
+            roles.append(STIWerewolf())
+        }
+        
+        if seerSwitch.isOn {
+            roles.append(STISeer())
+        }
+        
+        if witchSwitch.isOn {
+            roles.append(STIWitch())
+        }
+        
+        if hunterSwitch.isOn {
+            roles.append(STIHunter())
+        }
+        
+        if idiotSwitch.isOn {
+            roles.append(STIIdiot())
+        }
+        
+        if cupidSwitch.isOn {
+            roles.append(STICupid())
+        }
+        
+        if littleGirlSwitch.isOn {
+            roles.append(STILittleGirl())
+        }
+        
+        if elderSwitch.isOn {
+            roles.append(STIElder())
+        }
+        
+        if thiefSwitch.isOn {
+            roles.append(STIThief())
+        }
+        
+        var randomRoles = Array<STIRoleProtocol>()
+        for _ in 0..<roles.count {
+            let randomIndex = UInt32.randomInRange(range: 0..<UInt32(roles.count))
+            randomRoles.append(roles[Int(randomIndex)])
+            roles.remove(at: Int(randomIndex))
+        }
+        
+        print(randomRoles)
+        print("\n\n")
+        
+        navigationController?.pushViewController(STIRoleShowViewController(roles: randomRoles), animated: true)
     }
     
 
@@ -115,7 +180,7 @@ class STIConfigViewController: UIViewController {
         action(swi: sender)
     }
     
-    @IBAction func qupidSwitchValueChanged(_ sender: UISwitch) {
+    @IBAction func cupidSwitchValueChanged(_ sender: UISwitch) {
         action(swi: sender)
     }
     @IBAction func littleGirlSwitchValueChanged(_ sender: UISwitch) {
@@ -185,7 +250,7 @@ class STIConfigViewController: UIViewController {
         count += hunterSwitch.isOn ? 1 : 0
         count += idiotSwitch.isOn ? 1 : 0
         
-        count += qupidSwitch.isOn ? 1 : 0
+        count += cupidSwitch.isOn ? 1 : 0
         count += littleGirlSwitch.isOn ? 1 : 0
         count += elderSwitch.isOn ? 1 : 0
         count += thiefSwitch.isOn ? 1 : 0

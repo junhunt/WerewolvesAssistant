@@ -14,7 +14,7 @@ class STIHomeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = .red
+//        self.view.backgroundColor = .red
     }
 
     override func didReceiveMemoryWarning() {

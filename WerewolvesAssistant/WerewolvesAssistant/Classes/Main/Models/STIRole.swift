@@ -8,6 +8,61 @@
 
 import Foundation
 
+struct STITownsfolk: STIRoleProtocol {
+    var name: String = "普通村民"
+    var avatar: String = "townsfolk"
+}
+
+struct STIWerewolf: STIRoleProtocol {
+    var name: String = "狼人"
+    var avatar: String = "werewolf"
+}
+
+struct STISeer: STIRoleProtocol {
+    var name: String = "预言家"
+    var avatar: String = "seer"
+}
+
+struct STIWitch: STIRoleProtocol {
+    var name: String = "女巫"
+    var avatar: String = "witch"
+}
+
+struct STIHunter: STIRoleProtocol {
+    var name: String = "猎人"
+    var avatar: String = "hunter"
+}
+
+struct STIIdiot: STIRoleProtocol {
+    var name: String = "白痴"
+    var avatar: String = "idiot"
+}
+
+struct  STIDefender: STIRoleProtocol {
+    var name: String = "守卫"
+    var avatar: String = "defender"
+}
+
+struct STICupid: STIRoleProtocol {
+    var name: String = "丘比特"
+    var avatar: String = "cupid"
+}
+
+struct  STIElder: STIRoleProtocol {
+    var name: String = "长老"
+    var avatar: String = "elder"
+}
+
+struct STIThief: STIRoleProtocol {
+    var name: String = "盗贼"
+    var avatar: String = "thief"
+}
+
+struct  STILittleGirl: STIRoleProtocol {
+    var name: String = "小女孩"
+    var avatar: String = "little_girl"
+}
+
 enum STIRole {
     case townsfolk
     case werewolf
